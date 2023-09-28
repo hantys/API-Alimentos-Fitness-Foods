@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  port: <%= ENV['DATABASE_PORT'] || '5432' %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+
+development:
+  <<: *default
+  database: api_fitness_food_development
+
+test:
+  <<: *default
+  database: api_fitness_food_test
+
+# production:
+#   <<: *default
+#   database: api_fitness_food_production
+#   username: api_fitness_food
+#   password: <%= ENV["API_FITNESS_FOOD_DATABASE_PASSWORD"] %>
