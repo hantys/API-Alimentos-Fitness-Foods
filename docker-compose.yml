@@ -2,6 +2,7 @@ version: '3.7'
 
 volumes:
   gem_cache:
+  bundle-cache:
   db_data:
   db_redis:
 
@@ -22,6 +23,7 @@ services:
       - default
     volumes:
       - .:/app
+      - bundle-cache:/bundle
       - gem_cache:/usr/local/bundle/gems
     env_file: .env
     environment:

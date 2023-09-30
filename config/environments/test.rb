@@ -58,3 +58,4 @@ Rails.application.configure do
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
 end
+Rails.application.routes.default_url_options = { host: '0.0.0.0', port: 3000, protocol: 'http' }
