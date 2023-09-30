@@ -24,6 +24,7 @@ jobs:
     env:
       RAILS_ENV: test
       DATABASE_URL: "postgres://postgres:root@localhost:5432/api_fitness_food_test"
+      BUNDLE_GITHUB__COM: ${{ vars.BUNDLE_GITHUB__COM }}
     steps:
     - uses: actions/checkout@v3
 
@@ -32,12 +33,14 @@ jobs:
       with:
         ruby-version: 2.7
         bundler-cache: true
-        bundler: "Gemfile.lock"
+
+    - name: Print environment variable
+      run: echo "Value of BUNDLE_GITHUB__COM is ${{ vars.BUNDLE_GITHUB__COM }}"
 
     - name: Install dependencies
       run: |
-        gem install bundler
-        bundle lock --add-platform x86_64-linux
+        bundle config github.https://github.com $BUNDLE_GITHUB__COM:x-access-token
+        bundle install
 
     - name: Set up database schema
       run: rails db:migrate
