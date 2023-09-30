@@ -12,7 +12,7 @@ COPY Gemfile Gemfile.lock ./
 
 RUN bundle config build.nokogiri --use-system-libraries
 
-RUN bundle install 
+RUN bundle install
 
 COPY . ./
 

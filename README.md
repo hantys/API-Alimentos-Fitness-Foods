@@ -17,6 +17,6 @@
 - Criar banco e rodar migrações: ``$ make create``.
 - Rodar seed: ``$ make seed``.
 - Reseta o banco de dados e roda seed: ``$ make restart``.
-- Executa os testes. obs:(Você pode passar os argumentos do RSpec logo após o comando.): ``$ make test ``.
+- Executa os testes. obs:(Você pode passar os argumentos do RSpec logo após o comando. ARG='argumentos'): ``$ make rspec ``.
 - Entra no console: ``$ make console``.
 ``.
