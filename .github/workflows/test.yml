@@ -35,7 +35,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        bundle install
+        gem install bundler
+        bundle lock --add-platform x86_64-linux
 
     - name: Set up database schema
       run: rails db:migrate
