@@ -1,4 +1,5 @@
 ARG=
+
 start-build:
 	docker-compose up --build --remove-orphans
 
@@ -12,7 +13,7 @@ log:
 	docker-compose log
 
 bash:
-	docker exec -ti app bash
+	docker exec -it api-fitness-food ash
 
 create:
 	docker-compose exec app bundle exec rake db:setup db:migrate
@@ -26,8 +27,8 @@ seed:
 console:
 	docker-compose exec app rails console
 
-test:
-	docker-compose exec app bin/rspec $(ARG)
+rspec:
+	docker-compose exec app rspec $(ARG)
 
 reset:
 	docker-compose exec app bundle exec rake db:drop db:setup db:create db:migrate db:seed
