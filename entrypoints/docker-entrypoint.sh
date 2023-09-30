@@ -1,6 +1,4 @@
 #!/bin/sh
-echo "vm.overcommit_memory=1" > /etc/sysctl.d/overcommit_memory.conf
-sysctl -p /etc/sysctl.d/overcommit_memory.conf
 
 set -e
 
