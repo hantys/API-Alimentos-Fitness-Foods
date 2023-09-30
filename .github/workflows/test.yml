@@ -24,22 +24,17 @@ jobs:
     env:
       RAILS_ENV: test
       DATABASE_URL: "postgres://postgres:root@localhost:5432/api_fitness_food_test"
-      BUNDLE_GITHUB__COM: ${{ vars.BUNDLE_GITHUB__COM }}
     steps:
     - uses: actions/checkout@v3
 
-    - name: Configure Ruby
-      uses: ruby/setup-ruby@v1
+    - name: Setup Ruby Pkgs
+      uses: ruby/setup-ruby-pkgs@v1.33.0
       with:
         ruby-version: 2.7
         bundler-cache: true
 
-    - name: Print environment variable
-      run: echo "Value of BUNDLE_GITHUB__COM is ${{ vars.BUNDLE_GITHUB__COM }}"
-
     - name: Install dependencies
       run: |
-        bundle config github.https://github.com $BUNDLE_GITHUB__COM:x-access-token
         bundle install
 
     - name: Set up database schema
