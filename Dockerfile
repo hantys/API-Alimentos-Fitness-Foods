@@ -1,4 +1,4 @@
-FROM ruby:2.7-alpine
+FROM ruby:3.2-alpine
 
 RUN apk update
 RUN apk add --update --no-cache openssl postgresql-dev build-base tzdata binutils-gold curl file g++ gcc git less libstdc++ libffi-dev libc-dev linux-headers libxml2-dev libxslt-dev libgcrypt-dev make netcat-openbsd pkgconfig libpq-dev
