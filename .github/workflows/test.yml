@@ -27,10 +27,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Configure Ruby
-      uses: ruby/setup-ruby@v1
+    - name: Install Ruby and gems
+      uses: ruby/setup-ruby@8f312efe1262fb463d906e9bf040319394c18d3e
       with:
-        ruby-version: 2.7
         bundler-cache: true
 
     - name: Install dependencies
@@ -40,7 +39,8 @@ jobs:
         bundle install
 
     - name: Set up database schema
-      run: rails db:migrate
+      run: bin/rails db:schema:load
+      # run: rails db:migrate
 
     - name: Run Tests
       run: bundle exec rspec --format progress
