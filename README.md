@@ -3,6 +3,8 @@
 
 >  This is a challenge by [Coodesh](https://coodesh.com/)
 
+> link da apresentação do projeto [Video](https://www.loom.com/share/3380bb475e7143b9939d834294a7ba13)
+
 ### Tecnologias
  - Ruby
  - Rails
