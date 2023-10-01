@@ -37,7 +37,13 @@ class ProductsController < ApplicationController
 
   # DELETE /products/1
   def destroy
-    @product.destroy
+    @product.status = 'trash'
+
+    if @product.save
+      render json: "DELETADO", status: :ok
+    else
+      render json: @product.errors, status: :unprocessable_entity
+    end
   end
 
   private
