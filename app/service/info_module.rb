@@ -12,7 +12,11 @@ module InfoModule
   end
 
   def last_cron_jobs
-    Rails.cache.read('last_job_time')
+    REDIS.get('last_job_time')
+    data = Time.parse(REDIS.get('last_job_time'))
+    data.strftime("%d/%m/%Y %H:%M")
+  rescue StandardError
+    "Não iniciado"
   end
 
   def time_online

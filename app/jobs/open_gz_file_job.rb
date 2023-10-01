@@ -19,7 +19,7 @@ class OpenGzFileJob < ApplicationJob
         end
       end
     end
-    Rails.cache.write('last_job_time', Time.now)
+    REDIS.set('last_job_time', Time.now)
   end
 
   def process_product(product_data)
