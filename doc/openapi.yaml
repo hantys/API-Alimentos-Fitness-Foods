@@ -1,0 +1,480 @@
+---
+openapi: 3.0.3
+info:
+  title: app
+  version: 1.0.0
+servers: []
+paths:
+  "/":
+    get:
+      summary: index
+      tags:
+      - Home
+      responses:
+        '200':
+          description: renders a successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  info:
+                    type: object
+                    properties:
+                      version:
+                        type: string
+                      description:
+                        type: string
+                      status_database:
+                        type: string
+                      last_cron_jobs:
+                        type: string
+                      time_online:
+                        type: object
+                        properties:
+                          online:
+                            type: string
+                          load_average:
+                            type: string
+                        required:
+                        - online
+                        - load_average
+                      memory_usage:
+                        type: object
+                        properties:
+                          total:
+                            type: string
+                          used:
+                            type: string
+                          free:
+                            type: string
+                        required:
+                        - total
+                        - used
+                        - free
+                    required:
+                    - version
+                    - description
+                    - status_database
+                    - last_cron_jobs
+                    - time_online
+                    - memory_usage
+                required:
+                - info
+              example:
+                info:
+                  version: '1.0'
+                  description: API de informação nutricional dos alimentos que os
+                    usuários publicam pela aplicação móvel, dados do projeto Open
+                    Food Facts
+                  status_database: OK
+                  last_cron_jobs: 01/10/2023 12:11:11
+                  time_online:
+                    online: 20:03,
+                    load_average: 0.84, 1.07, 1.07
+                  memory_usage:
+                    total: 7288 MB
+                    used: 4442 MB
+                    free: 1106 MB
+        '400':
+          description: renders a failured response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  info:
+                    type: string
+                required:
+                - info
+              example:
+                info: Temos um problema! Error
+  "/platforms":
+    get:
+      summary: index
+      tags:
+      - Platform
+      responses:
+        '200':
+          description: renders a successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+              example: []
+    post:
+      summary: create
+      tags:
+      - Platform
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                platform:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      nullable: true
+                  required:
+                  - name
+              required:
+              - platform
+            example:
+              platform:
+                name:
+      responses:
+        '201':
+          description: renders a JSON response with the new platform
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  key:
+                    type: string
+                required:
+                - id
+                - name
+                - key
+              example:
+                id: 123
+                name: Hane and Sons
+                key: eyJhbGciOiJIUzI1NiJ9.eyJwbGF0YWZvcm1fc2VjcmV0IjoiMDg1NjJmYmFmYzI4MzRkOTRkMmRhIiwiZXhwIjo0ODUxODQ2ODM2fQ.23uadPpm4bssfrVCIx6W56kzQ8skHXS52ckQngPIB38
+        '422':
+          description: renders a JSON response with errors for the new platform
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: array
+                    items:
+                      type: string
+                required:
+                - name
+              example:
+                name:
+                - can't be blank
+  "/platforms/{id}":
+    delete:
+      summary: destroy
+      tags:
+      - Platform
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: 124
+      responses:
+        '204':
+          description: destroys the requested platform
+          content:
+            '':
+              schema:
+                type: string
+              example: ''
+  "/products":
+    get:
+      summary: index
+      tags:
+      - Product
+      responses:
+        '200':
+          description: renders a successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+              example: []
+  "/products/{id}":
+    get:
+      summary: show
+      tags:
+      - Product
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        example: d39e81d930af3538ec8899cb0fad
+      responses:
+        '200':
+          description: renders a successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  code:
+                    type: string
+                  status:
+                    type: string
+                  imported_t:
+                    type: string
+                  url:
+                    type: string
+                  creator:
+                    type: string
+                  created_t:
+                    type: integer
+                  last_modified_t:
+                    type: integer
+                  product_name:
+                    type: string
+                  quantity:
+                    type: string
+                  cities:
+                    type: string
+                  purchase_places:
+                    type: string
+                  ingredients_text:
+                    type: string
+                  traces:
+                    type: string
+                  serving_size:
+                    type: string
+                  serving_quantity:
+                    type: string
+                  nutriscore_score:
+                    type: string
+                  nutriscore_grade:
+                    type: string
+                  main_category:
+                    type: string
+                  image_url:
+                    type: string
+                  brands:
+                    type: string
+                  categories:
+                    type: string
+                  labels:
+                    type: string
+                  stores:
+                    type: string
+                required:
+                - id
+                - code
+                - status
+                - imported_t
+                - url
+                - creator
+                - created_t
+                - last_modified_t
+                - product_name
+                - quantity
+                - cities
+                - purchase_places
+                - ingredients_text
+                - traces
+                - serving_size
+                - serving_quantity
+                - nutriscore_score
+                - nutriscore_grade
+                - main_category
+                - image_url
+                - brands
+                - categories
+                - labels
+                - stores
+              example:
+                id: 61
+                code: d39e81d930af3538ec8899cb0fad
+                status: published
+                imported_t: '2023-09-30T03:19:11.000-03:00'
+                url: ''
+                creator: Cotton
+                created_t: 1
+                last_modified_t: 1
+                product_name: Aerodynamic Concrete Knife
+                quantity: '312129'
+                cities: ''
+                purchase_places: ''
+                ingredients_text: ''
+                traces: ''
+                serving_size: ''
+                serving_quantity: ''
+                nutriscore_score: ''
+                nutriscore_grade: ''
+                main_category: ''
+                image_url: MyString
+                brands: Samsung
+                categories: String
+                labels: String
+                stores: String
+    patch:
+      summary: update
+      tags:
+      - Product
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        example: ec12ac14a46965a4bf
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                product:
+                  type: object
+                  properties:
+                    product_name:
+                      type: string
+                  required:
+                  - product_name
+              required:
+              - product
+            example:
+              product:
+                product_name: banana
+      responses:
+        '200':
+          description: updates the requested product
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  code:
+                    type: string
+                  status:
+                    type: string
+                  imported_t:
+                    type: string
+                  url:
+                    type: string
+                  creator:
+                    type: string
+                  created_t:
+                    type: integer
+                  last_modified_t:
+                    type: integer
+                  product_name:
+                    type: string
+                  quantity:
+                    type: string
+                  cities:
+                    type: string
+                  purchase_places:
+                    type: string
+                  ingredients_text:
+                    type: string
+                  traces:
+                    type: string
+                  serving_size:
+                    type: string
+                  serving_quantity:
+                    type: string
+                  nutriscore_score:
+                    type: string
+                  nutriscore_grade:
+                    type: string
+                  main_category:
+                    type: string
+                  image_url:
+                    type: string
+                  brands:
+                    type: string
+                  categories:
+                    type: string
+                  labels:
+                    type: string
+                  stores:
+                    type: string
+                required:
+                - id
+                - code
+                - status
+                - imported_t
+                - url
+                - creator
+                - created_t
+                - last_modified_t
+                - product_name
+                - quantity
+                - cities
+                - purchase_places
+                - ingredients_text
+                - traces
+                - serving_size
+                - serving_quantity
+                - nutriscore_score
+                - nutriscore_grade
+                - main_category
+                - image_url
+                - brands
+                - categories
+                - labels
+                - stores
+              example:
+                id: 62
+                code: 966b11832444a3402a2fde5664b
+                status: published
+                imported_t: '2023-09-30T03:19:11.000-03:00'
+                url: ''
+                creator: Marble
+                created_t: 1
+                last_modified_t: 1
+                product_name: banana
+                quantity: '856448'
+                cities: ''
+                purchase_places: ''
+                ingredients_text: ''
+                traces: ''
+                serving_size: ''
+                serving_quantity: ''
+                nutriscore_score: ''
+                nutriscore_grade: ''
+                main_category: ''
+                image_url: MyString
+                brands: Beats
+                categories: String
+                labels: String
+                stores: String
+        '400':
+          description: renders a JSON response with errors for the product
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                required:
+                - error
+              example:
+                error: 'param is missing or the value is empty: product'
+    delete:
+      summary: destroy
+      tags:
+      - Product
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        example: a5052fcf2
+      responses:
+        '200':
+          description: destroy the requested product
