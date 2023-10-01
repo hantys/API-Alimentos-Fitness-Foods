@@ -75,12 +75,12 @@ paths:
                   status_database: OK
                   last_cron_jobs: 01/10/2023 12:11:11
                   time_online:
-                    online: 20:29,
-                    load_average: 2.26, 1.27, 1.05
+                    online: 21:00,
+                    load_average: 1.94, 1.83, 1.62
                   memory_usage:
                     total: 7288 MB
-                    used: 4888 MB
-                    free: 154 MB
+                    used: 5025 MB
+                    free: 224 MB
         '400':
           description: renders a failured response
           content:
@@ -316,9 +316,9 @@ paths:
                 - name
                 - key
               example:
-                id: 167
-                name: Waelchi, Ankunding and Williamson
-                key: eyJhbGciOiJIUzI1NiJ9.eyJwbGF0YWZvcm1fc2VjcmV0IjoiNWQ5M2FiN2EwOTI0MDk4ZjNiNGNjIiwiZXhwIjo0ODUxODQ4MzYxfQ.T_JxWg9vbKhSNvl52rgDxp_-Cva2eMe541JNoa7Ngv8
+                id: 206
+                name: Ziemann, Goldner and Kohler
+                key: eyJhbGciOiJIUzI1NiJ9.eyJwbGF0YWZvcm1fc2VjcmV0IjoiMDgzYzc2YWZlY2FiMjM1YWIyZmZmIiwiZXhwIjo0ODUxODUwMjM0fQ.pm0nt-8ArlUX7HG5B8Lm7N9iTO1UL2BxI54pZD-6t2k
         '422':
           description: renders a JSON response with errors for the new platform
           content:
@@ -429,7 +429,7 @@ paths:
         required: true
         schema:
           type: integer
-        example: 168
+        example: 207
       responses:
         '204':
           description: destroys the requested platform
@@ -629,7 +629,7 @@ paths:
         required: true
         schema:
           type: string
-        example: 406daea8cddcb3310a071ebd27e461ffcb813005
+        example: a14ea063168dbea4ac
       responses:
         '200':
           description: renders a successful response
@@ -712,16 +712,16 @@ paths:
                 - labels
                 - stores
               example:
-                id: 81
-                code: 406daea8cddcb3310a071ebd27e461ffcb813005
-                status: published
+                id: 98
+                code: a14ea063168dbea4ac
+                status: draft
                 imported_t: '2023-09-30T03:19:11.000-03:00'
                 url: ''
-                creator: Leather
+                creator: Concrete
                 created_t: 1
                 last_modified_t: 1
-                product_name: Rustic Steel Table
-                quantity: '354161'
+                product_name: Lightweight Plastic Watch
+                quantity: '833322'
                 cities: ''
                 purchase_places: ''
                 ingredients_text: ''
@@ -732,7 +732,7 @@ paths:
                 nutriscore_grade: ''
                 main_category: ''
                 image_url: MyString
-                brands: LG
+                brands: Dell
                 categories: String
                 labels: String
                 stores: String
@@ -829,7 +829,7 @@ paths:
         required: true
         schema:
           type: string
-        example: 7492d2
+        example: 0417a8f5c49df9c07
       requestBody:
         content:
           application/json:
@@ -930,16 +930,16 @@ paths:
                 - labels
                 - stores
               example:
-                id: 82
-                code: fb7491c23562a61c0d7c
-                status: trash
+                id: 99
+                code: 63885c4067ac2e6e8d9882a8a0f296991a
+                status: published
                 imported_t: '2023-09-30T03:19:11.000-03:00'
                 url: ''
-                creator: Copper
+                creator: Granite
                 created_t: 1
                 last_modified_t: 1
                 product_name: banana
-                quantity: '779878'
+                quantity: '530834'
                 cities: ''
                 purchase_places: ''
                 ingredients_text: ''
@@ -950,7 +950,7 @@ paths:
                 nutriscore_grade: ''
                 main_category: ''
                 image_url: MyString
-                brands: Sony
+                brands: Adidas
                 categories: String
                 labels: String
                 stores: String
@@ -1060,7 +1060,7 @@ paths:
         required: true
         schema:
           type: string
-        example: 86f39b2b9461fcd3
+        example: 00ece
       responses:
         '200':
           description: destroy the requested product
