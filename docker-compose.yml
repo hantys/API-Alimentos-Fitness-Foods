@@ -1,7 +1,6 @@
 version: '3.7'
 
 volumes:
-  gem_cache:
   bundle-cache:
   db_data:
   db_redis:

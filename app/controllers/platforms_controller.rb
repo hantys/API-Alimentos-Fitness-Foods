@@ -4,9 +4,11 @@ class PlatformsController < ApplicationController
 
   # GET /platforms
   def index
-    @platforms = Platform.order(:name).page(@page).per(@per_page)
+    @platforms = Platform.order(:name).page(params[:page]).per(params[:per_page])
 
-    render json: @platforms, meta: pagination_dict(@platforms)
+    pagination_header(@platforms)
+
+    render json: @platforms
   end
 
   # POST /platforms

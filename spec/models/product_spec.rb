@@ -18,7 +18,4 @@ RSpec.describe Product, type: :model do
   context 'Validates' do
     it { is_expected.to validate_presence_of(:product_name) }
   end
-  # context 'Associations' do
-  #   it { is_expected.to have_many(:channels).dependent(:destroy) }
-  # end
 end

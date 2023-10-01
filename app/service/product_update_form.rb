@@ -1,4 +1,4 @@
-class ProductForm
+class ProductUpdateForm
   include ActiveModel::Model
 
   attr_accessor :code, :status, :imported_t, :url,
@@ -9,7 +9,8 @@ class ProductForm
                 :brands, :categories, :labels, :stores
 
   def save
-    Product.create!(product_params)
+    @product = Product.find_by(code:)
+    @product.update(product_params)
   rescue ActiveRecord::RecordInvalid => e
     e.record.errors.each { |attr, msg| errors.add(attr, msg) }
 

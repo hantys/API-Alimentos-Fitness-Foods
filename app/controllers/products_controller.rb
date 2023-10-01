@@ -3,7 +3,9 @@ class ProductsController < ApplicationController
 
   # GET /products
   def index
-    @products = Product.all
+    @products = Product.order(:product_name).page(params[:page]).per(params[:per_page])
+
+    pagination_header(@products)
 
     render json: @products
   end
@@ -42,12 +44,16 @@ class ProductsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_product
-    @product = Product.find(params[:id])
+    @product = Product.find_by(code: params[:id])
   end
 
   # Only allow a list of trusted parameters through.
   def product_params
-    params.require(:product).permit(:code, :status, :imported_t, :url, :creator, :created_t, :last_modified_t, :product_name, :quantity, :cities, :purchase_places, :ingredients_text, :traces, :serving_size, :serving_quantity, :nutriscore_score,
-                                    :nutriscore_grade, :main_category, :brand_id, :store_id, :image_url)
+    params.require(:product).permit(:code, :status, :imported_t, :url,
+                                    :creator, :created_t, :last_modified_t, :product_name,
+                                    :quantity, :cities, :purchase_places, :ingredients_text,
+                                    :traces, :serving_size, :serving_quantity, :nutriscore_score,
+                                    :nutriscore_grade, :main_category, :image_url,
+                                    :brands, :categories, :labels, :stores)
   end
 end

@@ -1,16 +1,10 @@
 class ApplicationController < ActionController::API
   before_action :authenticate_request_platform
-  before_action :default_params_paginate
 
   def authenticate_request_platform
     auth = AuthorizationPlatform.new(request)
     @current_platform = auth.current_platform
     render json: { error: 'Not Authorized' }, status: 401 unless @current_platform
-  end
-
-  def default_params_paginate
-    @per_page = params[:per_page] || 10
-    @page = params[:page] || 1
   end
 
   def pagination_dict(collection)
@@ -21,6 +15,17 @@ class ApplicationController < ActionController::API
       total_pages: collection.total_pages,
       total_count: collection.total_count
     }
+  end
+
+  def pagination_header(collection)
+    gap_pages = Array.new(collection.total_pages).map.with_index(1) { |_x, i| i }.to_s
+
+    response.set_header('current_page', collection.current_page)
+    response.set_header('next_page', collection.next_page)
+    response.set_header('prev_page', collection.prev_page)
+    response.set_header('gap_pages', gap_pages)
+    response.set_header('total_pages', collection.total_pages)
+    response.set_header('total_count', collection.total_count)
   end
 
   rescue_from Exception,                           with: :render_error

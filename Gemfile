@@ -24,6 +24,10 @@ gem 'bootsnap', require: false
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '4.5.1'
 
+gem 'zlib'
+
+gem 'open-uri'
+
 # https://github.com/jwt/ruby-jwt
 gem 'jwt'
 
@@ -36,6 +40,10 @@ gem 'sidekiq-scheduler', '~> 3.1.0'
 # https://github.com/ondrejbartas/sidekiq-cron
 gem 'sidekiq-cron', '~> 1.8.0'
 
+# https://github.com/kaminari/kaminari
+gem 'kaminari'
+
+gem 'systemu'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -51,11 +59,6 @@ group :development, :test do
 
   # https://github.com/ffaker/ffaker
   gem 'ffaker'
-
-  gem 'systemu'
-
-  # https://github.com/kaminari/kaminari
-  gem 'kaminari'
 
   gem 'pry-rails'
 

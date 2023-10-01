@@ -16,7 +16,7 @@ RSpec.describe "/products", type: :request do
   describe "GET /show" do
     it "renders a successful response" do
       product = create(:product)
-      get product_url(product), as: :json
+      get product_url(product.code), headers: valid_login_headers, as: :json
       expect(response).to be_successful
     end
   end
