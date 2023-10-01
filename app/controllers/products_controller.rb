@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[ show update destroy ]
+  before_action :set_product, only: %i[show update destroy]
 
   # GET /products
   def index
@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
 
   # POST /products
   def create
-    @product = Product.new(product_params)
+    @product = ProductForm.new(product_params)
 
     if @product.save
       render json: @product, status: :created, location: @product
@@ -39,13 +39,15 @@ class ProductsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = Product.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def product_params
-      params.require(:product).permit(:code, :status, :imported_t, :url, :creator, :created_t, :last_modified_t, :product_name, :quantity, :cities, :purchase_places, :ingredients_text, :traces, :serving_size, :serving_quantity, :nutriscore_score, :nutriscore_grade, :main_category, :brand_id, :store_id, :image_url)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def product_params
+    params.require(:product).permit(:code, :status, :imported_t, :url, :creator, :created_t, :last_modified_t, :product_name, :quantity, :cities, :purchase_places, :ingredients_text, :traces, :serving_size, :serving_quantity, :nutriscore_score,
+                                    :nutriscore_grade, :main_category, :brand_id, :store_id, :image_url)
+  end
 end

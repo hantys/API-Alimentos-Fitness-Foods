@@ -2,7 +2,7 @@ class CreateProducts < ActiveRecord::Migration[7.0]
   def change
     create_table :products do |t|
       t.integer :code
-      t.integer :status
+      t.integer :status, default: 0
       t.datetime :imported_t
       t.string :url
       t.string :creator
