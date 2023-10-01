@@ -1,8 +1,13 @@
 ---
 openapi: 3.0.3
 info:
-  title: app
-  version: 1.0.0
+  title: API-Alimentos-Fitness-Foods
+  version: '1.0'
+  description: API de informação nutricional dos alimentos que os usuários publicam
+    pela aplicação móvel, dados do projeto Open Food Facts
+  license:
+    name: API-Alimentos-Fitness-Foods
+    url: http://localhost:3000
 servers: []
 paths:
   "/":
@@ -70,12 +75,12 @@ paths:
                   status_database: OK
                   last_cron_jobs: 01/10/2023 12:11:11
                   time_online:
-                    online: 20:03,
-                    load_average: 0.84, 1.07, 1.07
+                    online: 20:29,
+                    load_average: 2.26, 1.27, 1.05
                   memory_usage:
                     total: 7288 MB
-                    used: 4442 MB
-                    free: 1106 MB
+                    used: 4888 MB
+                    free: 154 MB
         '400':
           description: renders a failured response
           content:
@@ -89,6 +94,89 @@ paths:
                 - info
               example:
                 info: Temos um problema! Error
+        '403':
+          description: renders a failured response
+          content:
+            text/html:
+              schema:
+                type: string
+              example: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\"
+                />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n
+                \ <title>Action Controller: Exception caught</title>\n  <style>\n
+                \   body {\n      background-color: #FAFAFA;\n      color: #333;\n
+                \     color-scheme: light dark;\n      supported-color-schemes: light
+                dark;\n      margin: 0px;\n    }\n\n    body, p, ol, ul, td {\n      font-family:
+                helvetica, verdana, arial, sans-serif;\n      font-size:   13px;\n
+                \     line-height: 18px;\n    }\n\n    pre {\n      font-size: 11px;\n
+                \     white-space: pre-wrap;\n    }\n\n    pre.box {\n      border:
+                1px solid #EEE;\n      padding: 10px;\n      margin: 0px;\n      width:
+                958px;\n    }\n\n    header {\n      color: #F0F0F0;\n      background:
+                #C00;\n      padding: 0.5em 1.5em;\n    }\n\n    h1 {\n      overflow-wrap:
+                break-word;\n      margin: 0.2em 0;\n      line-height: 1.1em;\n      font-size:
+                2em;\n    }\n\n    h2 {\n      color: #C00;\n      line-height: 25px;\n
+                \   }\n\n    code.traces {\n      font-size: 11px;\n    }\n\n    .response-heading,
+                .request-heading {\n      margin-top: 30px;\n    }\n\n    .exception-message
+                {\n      padding: 8px 0;\n    }\n\n    .exception-message .message
+                {\n      margin-bottom: 8px;\n      line-height: 25px;\n      font-size:
+                1.5em;\n      font-weight: bold;\n      color: #C00;\n    }\n\n    .details
+                {\n      border: 1px solid #D0D0D0;\n      border-radius: 4px;\n      margin:
+                1em 0px;\n      display: block;\n      max-width: 978px;\n    }\n\n
+                \   .summary {\n      padding: 8px 15px;\n      border-bottom: 1px
+                solid #D0D0D0;\n      display: block;\n    }\n\n    a.summary {\n
+                \     color: #F0F0F0;\n      text-decoration: none;\n      background:
+                #C52F24;\n      border-bottom: none;\n    }\n\n    .details pre {\n
+                \     margin: 5px;\n      border: none;\n    }\n\n    #container {\n
+                \     box-sizing: border-box;\n      width: 100%;\n      padding:
+                0 1.5em;\n    }\n\n    .source * {\n      margin: 0px;\n      padding:
+                0px;\n    }\n\n    .source {\n      border: 1px solid #D9D9D9;\n      background:
+                #ECECEC;\n      max-width: 978px;\n    }\n\n    .source pre {\n      padding:
+                10px 0px;\n      border: none;\n    }\n\n    .source .data {\n      font-size:
+                80%;\n      overflow: auto;\n      background-color: #FFF;\n    }\n\n
+                \   .info {\n      padding: 0.5em;\n    }\n\n    .source .data .line_numbers
+                {\n      background-color: #ECECEC;\n      color: #555;\n      padding:
+                1em .5em;\n      border-right: 1px solid #DDD;\n      text-align:
+                right;\n    }\n\n    .line {\n      padding-left: 10px;\n      white-space:
+                pre;\n    }\n\n    .line:hover {\n      background-color: #F6F6F6;\n
+                \   }\n\n    .line.active {\n      background-color: #FCC;\n    }\n\n
+                \   .button_to {\n      display: inline-block;\n      margin-top:
+                0.75em;\n      margin-bottom: 0.75em;\n    }\n\n    .hidden {\n      display:
+                none;\n    }\n\n    .correction {\n      list-style-type: none;\n
+                \   }\n\n    input[type=\"submit\"] {\n      color: white;\n      background-color:
+                #C00;\n      border: none;\n      border-radius: 12px;\n      box-shadow:
+                0 3px #F99;\n      font-size: 13px;\n      font-weight: bold;\n      margin:
+                0;\n      padding: 10px 18px;\n      cursor: pointer;\n      -webkit-appearance:
+                none;\n    }\n    input[type=\"submit\"]:focus,\n    input[type=\"submit\"]:hover
+                {\n      opacity: 0.8;\n    }\n    input[type=\"submit\"]:active {\n
+                \     box-shadow: 0 2px #F99;\n      transform: translateY(1px)\n
+                \   }\n\n    a { color: #980905; }\n    a:visited { color: #666; }\n
+                \   a.trace-frames {\n      color: #666;\n      overflow-wrap: break-word;\n
+                \   }\n    a:hover, a.trace-frames.selected { color: #C00; }\n    a.summary:hover
+                { color: #FFF; }\n\n    @media (prefers-color-scheme: dark) {\n      body
+                {\n        background-color: #222;\n        color: #ECECEC;\n      }\n\n
+                \     .details, .summary {\n        border-color: #666;\n      }\n\n
+                \     .source {\n        border-color: #555;\n        background-color:
+                #333;\n      }\n\n      .source .data {\n        background: #444;\n
+                \     }\n\n      .source .data .line_numbers {\n        background:
+                #333;\n        border-color: #222;\n      }\n\n      .line:hover {\n
+                \       background: #666;\n      }\n\n      .line.active {\n        background-color:
+                #900;\n      }\n\n      input[type=\"submit\"] {\n        box-shadow:
+                0 3px #800;\n      }\n      input[type=\"submit\"]:active {\n        box-shadow:
+                0 2px #800;\n      }\n\n      a { color: #C00; }\n      a.trace-frames
+                { color: #999; }\n      a:hover, a.trace-frames.selected { color:
+                #E9382B; }\n    }\n\n    \n  </style>\n\n  <script>\n    var toggle
+                = function(id) {\n      document.getElementById(id).classList.toggle('hidden');\n
+                \     return false;\n    }\n    var show = function(id) {\n      document.getElementById(id).style.display
+                = 'block';\n    }\n    var hide = function(id) {\n      document.getElementById(id).style.display
+                = 'none';\n    }\n    var toggleSessionDump = function() {\n      return
+                toggle('session_dump');\n    }\n    var toggleEnvDump = function()
+                {\n      return toggle('env_dump');\n    }\n  </script>\n</head>\n<body>\n\n
+                \ <header>\n  <h1>Blocked hosts: www.example.com</h1>\n</header>\n<main
+                role=\"main\" id=\"container\">\n  <h2>To allow requests to these
+                hosts, make sure they are valid hostnames (containing only numbers,
+                letters, dashes and dots), then add the following to your environment
+                configuration:</h2>\n  <pre>\n    config.hosts &lt;&lt; \"www.example.com\"\n
+                \ </pre>\n  <p>For more details view: <a href=\"https://guides.rubyonrails.org/configuring.html#actiondispatch-hostauthorization\">the
+                Host Authorization guide</a></p>\n</main>\n\n\n</body>\n</html>\n"
   "/platforms":
     get:
       summary: index
@@ -103,6 +191,89 @@ paths:
                 type: array
                 items: {}
               example: []
+        '403':
+          description: renders a successful response
+          content:
+            text/html:
+              schema:
+                type: string
+              example: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\"
+                />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n
+                \ <title>Action Controller: Exception caught</title>\n  <style>\n
+                \   body {\n      background-color: #FAFAFA;\n      color: #333;\n
+                \     color-scheme: light dark;\n      supported-color-schemes: light
+                dark;\n      margin: 0px;\n    }\n\n    body, p, ol, ul, td {\n      font-family:
+                helvetica, verdana, arial, sans-serif;\n      font-size:   13px;\n
+                \     line-height: 18px;\n    }\n\n    pre {\n      font-size: 11px;\n
+                \     white-space: pre-wrap;\n    }\n\n    pre.box {\n      border:
+                1px solid #EEE;\n      padding: 10px;\n      margin: 0px;\n      width:
+                958px;\n    }\n\n    header {\n      color: #F0F0F0;\n      background:
+                #C00;\n      padding: 0.5em 1.5em;\n    }\n\n    h1 {\n      overflow-wrap:
+                break-word;\n      margin: 0.2em 0;\n      line-height: 1.1em;\n      font-size:
+                2em;\n    }\n\n    h2 {\n      color: #C00;\n      line-height: 25px;\n
+                \   }\n\n    code.traces {\n      font-size: 11px;\n    }\n\n    .response-heading,
+                .request-heading {\n      margin-top: 30px;\n    }\n\n    .exception-message
+                {\n      padding: 8px 0;\n    }\n\n    .exception-message .message
+                {\n      margin-bottom: 8px;\n      line-height: 25px;\n      font-size:
+                1.5em;\n      font-weight: bold;\n      color: #C00;\n    }\n\n    .details
+                {\n      border: 1px solid #D0D0D0;\n      border-radius: 4px;\n      margin:
+                1em 0px;\n      display: block;\n      max-width: 978px;\n    }\n\n
+                \   .summary {\n      padding: 8px 15px;\n      border-bottom: 1px
+                solid #D0D0D0;\n      display: block;\n    }\n\n    a.summary {\n
+                \     color: #F0F0F0;\n      text-decoration: none;\n      background:
+                #C52F24;\n      border-bottom: none;\n    }\n\n    .details pre {\n
+                \     margin: 5px;\n      border: none;\n    }\n\n    #container {\n
+                \     box-sizing: border-box;\n      width: 100%;\n      padding:
+                0 1.5em;\n    }\n\n    .source * {\n      margin: 0px;\n      padding:
+                0px;\n    }\n\n    .source {\n      border: 1px solid #D9D9D9;\n      background:
+                #ECECEC;\n      max-width: 978px;\n    }\n\n    .source pre {\n      padding:
+                10px 0px;\n      border: none;\n    }\n\n    .source .data {\n      font-size:
+                80%;\n      overflow: auto;\n      background-color: #FFF;\n    }\n\n
+                \   .info {\n      padding: 0.5em;\n    }\n\n    .source .data .line_numbers
+                {\n      background-color: #ECECEC;\n      color: #555;\n      padding:
+                1em .5em;\n      border-right: 1px solid #DDD;\n      text-align:
+                right;\n    }\n\n    .line {\n      padding-left: 10px;\n      white-space:
+                pre;\n    }\n\n    .line:hover {\n      background-color: #F6F6F6;\n
+                \   }\n\n    .line.active {\n      background-color: #FCC;\n    }\n\n
+                \   .button_to {\n      display: inline-block;\n      margin-top:
+                0.75em;\n      margin-bottom: 0.75em;\n    }\n\n    .hidden {\n      display:
+                none;\n    }\n\n    .correction {\n      list-style-type: none;\n
+                \   }\n\n    input[type=\"submit\"] {\n      color: white;\n      background-color:
+                #C00;\n      border: none;\n      border-radius: 12px;\n      box-shadow:
+                0 3px #F99;\n      font-size: 13px;\n      font-weight: bold;\n      margin:
+                0;\n      padding: 10px 18px;\n      cursor: pointer;\n      -webkit-appearance:
+                none;\n    }\n    input[type=\"submit\"]:focus,\n    input[type=\"submit\"]:hover
+                {\n      opacity: 0.8;\n    }\n    input[type=\"submit\"]:active {\n
+                \     box-shadow: 0 2px #F99;\n      transform: translateY(1px)\n
+                \   }\n\n    a { color: #980905; }\n    a:visited { color: #666; }\n
+                \   a.trace-frames {\n      color: #666;\n      overflow-wrap: break-word;\n
+                \   }\n    a:hover, a.trace-frames.selected { color: #C00; }\n    a.summary:hover
+                { color: #FFF; }\n\n    @media (prefers-color-scheme: dark) {\n      body
+                {\n        background-color: #222;\n        color: #ECECEC;\n      }\n\n
+                \     .details, .summary {\n        border-color: #666;\n      }\n\n
+                \     .source {\n        border-color: #555;\n        background-color:
+                #333;\n      }\n\n      .source .data {\n        background: #444;\n
+                \     }\n\n      .source .data .line_numbers {\n        background:
+                #333;\n        border-color: #222;\n      }\n\n      .line:hover {\n
+                \       background: #666;\n      }\n\n      .line.active {\n        background-color:
+                #900;\n      }\n\n      input[type=\"submit\"] {\n        box-shadow:
+                0 3px #800;\n      }\n      input[type=\"submit\"]:active {\n        box-shadow:
+                0 2px #800;\n      }\n\n      a { color: #C00; }\n      a.trace-frames
+                { color: #999; }\n      a:hover, a.trace-frames.selected { color:
+                #E9382B; }\n    }\n\n    \n  </style>\n\n  <script>\n    var toggle
+                = function(id) {\n      document.getElementById(id).classList.toggle('hidden');\n
+                \     return false;\n    }\n    var show = function(id) {\n      document.getElementById(id).style.display
+                = 'block';\n    }\n    var hide = function(id) {\n      document.getElementById(id).style.display
+                = 'none';\n    }\n    var toggleSessionDump = function() {\n      return
+                toggle('session_dump');\n    }\n    var toggleEnvDump = function()
+                {\n      return toggle('env_dump');\n    }\n  </script>\n</head>\n<body>\n\n
+                \ <header>\n  <h1>Blocked hosts: www.example.com</h1>\n</header>\n<main
+                role=\"main\" id=\"container\">\n  <h2>To allow requests to these
+                hosts, make sure they are valid hostnames (containing only numbers,
+                letters, dashes and dots), then add the following to your environment
+                configuration:</h2>\n  <pre>\n    config.hosts &lt;&lt; \"www.example.com\"\n
+                \ </pre>\n  <p>For more details view: <a href=\"https://guides.rubyonrails.org/configuring.html#actiondispatch-hostauthorization\">the
+                Host Authorization guide</a></p>\n</main>\n\n\n</body>\n</html>\n"
     post:
       summary: create
       tags:
@@ -145,9 +316,9 @@ paths:
                 - name
                 - key
               example:
-                id: 123
-                name: Hane and Sons
-                key: eyJhbGciOiJIUzI1NiJ9.eyJwbGF0YWZvcm1fc2VjcmV0IjoiMDg1NjJmYmFmYzI4MzRkOTRkMmRhIiwiZXhwIjo0ODUxODQ2ODM2fQ.23uadPpm4bssfrVCIx6W56kzQ8skHXS52ckQngPIB38
+                id: 167
+                name: Waelchi, Ankunding and Williamson
+                key: eyJhbGciOiJIUzI1NiJ9.eyJwbGF0YWZvcm1fc2VjcmV0IjoiNWQ5M2FiN2EwOTI0MDk4ZjNiNGNjIiwiZXhwIjo0ODUxODQ4MzYxfQ.T_JxWg9vbKhSNvl52rgDxp_-Cva2eMe541JNoa7Ngv8
         '422':
           description: renders a JSON response with errors for the new platform
           content:
@@ -164,6 +335,89 @@ paths:
               example:
                 name:
                 - can't be blank
+        '403':
+          description: renders a JSON response with errors for the new platform
+          content:
+            text/html:
+              schema:
+                type: string
+              example: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\"
+                />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n
+                \ <title>Action Controller: Exception caught</title>\n  <style>\n
+                \   body {\n      background-color: #FAFAFA;\n      color: #333;\n
+                \     color-scheme: light dark;\n      supported-color-schemes: light
+                dark;\n      margin: 0px;\n    }\n\n    body, p, ol, ul, td {\n      font-family:
+                helvetica, verdana, arial, sans-serif;\n      font-size:   13px;\n
+                \     line-height: 18px;\n    }\n\n    pre {\n      font-size: 11px;\n
+                \     white-space: pre-wrap;\n    }\n\n    pre.box {\n      border:
+                1px solid #EEE;\n      padding: 10px;\n      margin: 0px;\n      width:
+                958px;\n    }\n\n    header {\n      color: #F0F0F0;\n      background:
+                #C00;\n      padding: 0.5em 1.5em;\n    }\n\n    h1 {\n      overflow-wrap:
+                break-word;\n      margin: 0.2em 0;\n      line-height: 1.1em;\n      font-size:
+                2em;\n    }\n\n    h2 {\n      color: #C00;\n      line-height: 25px;\n
+                \   }\n\n    code.traces {\n      font-size: 11px;\n    }\n\n    .response-heading,
+                .request-heading {\n      margin-top: 30px;\n    }\n\n    .exception-message
+                {\n      padding: 8px 0;\n    }\n\n    .exception-message .message
+                {\n      margin-bottom: 8px;\n      line-height: 25px;\n      font-size:
+                1.5em;\n      font-weight: bold;\n      color: #C00;\n    }\n\n    .details
+                {\n      border: 1px solid #D0D0D0;\n      border-radius: 4px;\n      margin:
+                1em 0px;\n      display: block;\n      max-width: 978px;\n    }\n\n
+                \   .summary {\n      padding: 8px 15px;\n      border-bottom: 1px
+                solid #D0D0D0;\n      display: block;\n    }\n\n    a.summary {\n
+                \     color: #F0F0F0;\n      text-decoration: none;\n      background:
+                #C52F24;\n      border-bottom: none;\n    }\n\n    .details pre {\n
+                \     margin: 5px;\n      border: none;\n    }\n\n    #container {\n
+                \     box-sizing: border-box;\n      width: 100%;\n      padding:
+                0 1.5em;\n    }\n\n    .source * {\n      margin: 0px;\n      padding:
+                0px;\n    }\n\n    .source {\n      border: 1px solid #D9D9D9;\n      background:
+                #ECECEC;\n      max-width: 978px;\n    }\n\n    .source pre {\n      padding:
+                10px 0px;\n      border: none;\n    }\n\n    .source .data {\n      font-size:
+                80%;\n      overflow: auto;\n      background-color: #FFF;\n    }\n\n
+                \   .info {\n      padding: 0.5em;\n    }\n\n    .source .data .line_numbers
+                {\n      background-color: #ECECEC;\n      color: #555;\n      padding:
+                1em .5em;\n      border-right: 1px solid #DDD;\n      text-align:
+                right;\n    }\n\n    .line {\n      padding-left: 10px;\n      white-space:
+                pre;\n    }\n\n    .line:hover {\n      background-color: #F6F6F6;\n
+                \   }\n\n    .line.active {\n      background-color: #FCC;\n    }\n\n
+                \   .button_to {\n      display: inline-block;\n      margin-top:
+                0.75em;\n      margin-bottom: 0.75em;\n    }\n\n    .hidden {\n      display:
+                none;\n    }\n\n    .correction {\n      list-style-type: none;\n
+                \   }\n\n    input[type=\"submit\"] {\n      color: white;\n      background-color:
+                #C00;\n      border: none;\n      border-radius: 12px;\n      box-shadow:
+                0 3px #F99;\n      font-size: 13px;\n      font-weight: bold;\n      margin:
+                0;\n      padding: 10px 18px;\n      cursor: pointer;\n      -webkit-appearance:
+                none;\n    }\n    input[type=\"submit\"]:focus,\n    input[type=\"submit\"]:hover
+                {\n      opacity: 0.8;\n    }\n    input[type=\"submit\"]:active {\n
+                \     box-shadow: 0 2px #F99;\n      transform: translateY(1px)\n
+                \   }\n\n    a { color: #980905; }\n    a:visited { color: #666; }\n
+                \   a.trace-frames {\n      color: #666;\n      overflow-wrap: break-word;\n
+                \   }\n    a:hover, a.trace-frames.selected { color: #C00; }\n    a.summary:hover
+                { color: #FFF; }\n\n    @media (prefers-color-scheme: dark) {\n      body
+                {\n        background-color: #222;\n        color: #ECECEC;\n      }\n\n
+                \     .details, .summary {\n        border-color: #666;\n      }\n\n
+                \     .source {\n        border-color: #555;\n        background-color:
+                #333;\n      }\n\n      .source .data {\n        background: #444;\n
+                \     }\n\n      .source .data .line_numbers {\n        background:
+                #333;\n        border-color: #222;\n      }\n\n      .line:hover {\n
+                \       background: #666;\n      }\n\n      .line.active {\n        background-color:
+                #900;\n      }\n\n      input[type=\"submit\"] {\n        box-shadow:
+                0 3px #800;\n      }\n      input[type=\"submit\"]:active {\n        box-shadow:
+                0 2px #800;\n      }\n\n      a { color: #C00; }\n      a.trace-frames
+                { color: #999; }\n      a:hover, a.trace-frames.selected { color:
+                #E9382B; }\n    }\n\n    \n  </style>\n\n  <script>\n    var toggle
+                = function(id) {\n      document.getElementById(id).classList.toggle('hidden');\n
+                \     return false;\n    }\n    var show = function(id) {\n      document.getElementById(id).style.display
+                = 'block';\n    }\n    var hide = function(id) {\n      document.getElementById(id).style.display
+                = 'none';\n    }\n    var toggleSessionDump = function() {\n      return
+                toggle('session_dump');\n    }\n    var toggleEnvDump = function()
+                {\n      return toggle('env_dump');\n    }\n  </script>\n</head>\n<body>\n\n
+                \ <header>\n  <h1>Blocked hosts: www.example.com</h1>\n</header>\n<main
+                role=\"main\" id=\"container\">\n  <h2>To allow requests to these
+                hosts, make sure they are valid hostnames (containing only numbers,
+                letters, dashes and dots), then add the following to your environment
+                configuration:</h2>\n  <pre>\n    config.hosts &lt;&lt; \"www.example.com\"\n
+                \ </pre>\n  <p>For more details view: <a href=\"https://guides.rubyonrails.org/configuring.html#actiondispatch-hostauthorization\">the
+                Host Authorization guide</a></p>\n</main>\n\n\n</body>\n</html>\n"
   "/platforms/{id}":
     delete:
       summary: destroy
@@ -175,7 +429,7 @@ paths:
         required: true
         schema:
           type: integer
-        example: 124
+        example: 168
       responses:
         '204':
           description: destroys the requested platform
@@ -184,6 +438,89 @@ paths:
               schema:
                 type: string
               example: ''
+        '403':
+          description: destroys the requested platform
+          content:
+            text/html:
+              schema:
+                type: string
+              example: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\"
+                />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n
+                \ <title>Action Controller: Exception caught</title>\n  <style>\n
+                \   body {\n      background-color: #FAFAFA;\n      color: #333;\n
+                \     color-scheme: light dark;\n      supported-color-schemes: light
+                dark;\n      margin: 0px;\n    }\n\n    body, p, ol, ul, td {\n      font-family:
+                helvetica, verdana, arial, sans-serif;\n      font-size:   13px;\n
+                \     line-height: 18px;\n    }\n\n    pre {\n      font-size: 11px;\n
+                \     white-space: pre-wrap;\n    }\n\n    pre.box {\n      border:
+                1px solid #EEE;\n      padding: 10px;\n      margin: 0px;\n      width:
+                958px;\n    }\n\n    header {\n      color: #F0F0F0;\n      background:
+                #C00;\n      padding: 0.5em 1.5em;\n    }\n\n    h1 {\n      overflow-wrap:
+                break-word;\n      margin: 0.2em 0;\n      line-height: 1.1em;\n      font-size:
+                2em;\n    }\n\n    h2 {\n      color: #C00;\n      line-height: 25px;\n
+                \   }\n\n    code.traces {\n      font-size: 11px;\n    }\n\n    .response-heading,
+                .request-heading {\n      margin-top: 30px;\n    }\n\n    .exception-message
+                {\n      padding: 8px 0;\n    }\n\n    .exception-message .message
+                {\n      margin-bottom: 8px;\n      line-height: 25px;\n      font-size:
+                1.5em;\n      font-weight: bold;\n      color: #C00;\n    }\n\n    .details
+                {\n      border: 1px solid #D0D0D0;\n      border-radius: 4px;\n      margin:
+                1em 0px;\n      display: block;\n      max-width: 978px;\n    }\n\n
+                \   .summary {\n      padding: 8px 15px;\n      border-bottom: 1px
+                solid #D0D0D0;\n      display: block;\n    }\n\n    a.summary {\n
+                \     color: #F0F0F0;\n      text-decoration: none;\n      background:
+                #C52F24;\n      border-bottom: none;\n    }\n\n    .details pre {\n
+                \     margin: 5px;\n      border: none;\n    }\n\n    #container {\n
+                \     box-sizing: border-box;\n      width: 100%;\n      padding:
+                0 1.5em;\n    }\n\n    .source * {\n      margin: 0px;\n      padding:
+                0px;\n    }\n\n    .source {\n      border: 1px solid #D9D9D9;\n      background:
+                #ECECEC;\n      max-width: 978px;\n    }\n\n    .source pre {\n      padding:
+                10px 0px;\n      border: none;\n    }\n\n    .source .data {\n      font-size:
+                80%;\n      overflow: auto;\n      background-color: #FFF;\n    }\n\n
+                \   .info {\n      padding: 0.5em;\n    }\n\n    .source .data .line_numbers
+                {\n      background-color: #ECECEC;\n      color: #555;\n      padding:
+                1em .5em;\n      border-right: 1px solid #DDD;\n      text-align:
+                right;\n    }\n\n    .line {\n      padding-left: 10px;\n      white-space:
+                pre;\n    }\n\n    .line:hover {\n      background-color: #F6F6F6;\n
+                \   }\n\n    .line.active {\n      background-color: #FCC;\n    }\n\n
+                \   .button_to {\n      display: inline-block;\n      margin-top:
+                0.75em;\n      margin-bottom: 0.75em;\n    }\n\n    .hidden {\n      display:
+                none;\n    }\n\n    .correction {\n      list-style-type: none;\n
+                \   }\n\n    input[type=\"submit\"] {\n      color: white;\n      background-color:
+                #C00;\n      border: none;\n      border-radius: 12px;\n      box-shadow:
+                0 3px #F99;\n      font-size: 13px;\n      font-weight: bold;\n      margin:
+                0;\n      padding: 10px 18px;\n      cursor: pointer;\n      -webkit-appearance:
+                none;\n    }\n    input[type=\"submit\"]:focus,\n    input[type=\"submit\"]:hover
+                {\n      opacity: 0.8;\n    }\n    input[type=\"submit\"]:active {\n
+                \     box-shadow: 0 2px #F99;\n      transform: translateY(1px)\n
+                \   }\n\n    a { color: #980905; }\n    a:visited { color: #666; }\n
+                \   a.trace-frames {\n      color: #666;\n      overflow-wrap: break-word;\n
+                \   }\n    a:hover, a.trace-frames.selected { color: #C00; }\n    a.summary:hover
+                { color: #FFF; }\n\n    @media (prefers-color-scheme: dark) {\n      body
+                {\n        background-color: #222;\n        color: #ECECEC;\n      }\n\n
+                \     .details, .summary {\n        border-color: #666;\n      }\n\n
+                \     .source {\n        border-color: #555;\n        background-color:
+                #333;\n      }\n\n      .source .data {\n        background: #444;\n
+                \     }\n\n      .source .data .line_numbers {\n        background:
+                #333;\n        border-color: #222;\n      }\n\n      .line:hover {\n
+                \       background: #666;\n      }\n\n      .line.active {\n        background-color:
+                #900;\n      }\n\n      input[type=\"submit\"] {\n        box-shadow:
+                0 3px #800;\n      }\n      input[type=\"submit\"]:active {\n        box-shadow:
+                0 2px #800;\n      }\n\n      a { color: #C00; }\n      a.trace-frames
+                { color: #999; }\n      a:hover, a.trace-frames.selected { color:
+                #E9382B; }\n    }\n\n    \n  </style>\n\n  <script>\n    var toggle
+                = function(id) {\n      document.getElementById(id).classList.toggle('hidden');\n
+                \     return false;\n    }\n    var show = function(id) {\n      document.getElementById(id).style.display
+                = 'block';\n    }\n    var hide = function(id) {\n      document.getElementById(id).style.display
+                = 'none';\n    }\n    var toggleSessionDump = function() {\n      return
+                toggle('session_dump');\n    }\n    var toggleEnvDump = function()
+                {\n      return toggle('env_dump');\n    }\n  </script>\n</head>\n<body>\n\n
+                \ <header>\n  <h1>Blocked hosts: www.example.com</h1>\n</header>\n<main
+                role=\"main\" id=\"container\">\n  <h2>To allow requests to these
+                hosts, make sure they are valid hostnames (containing only numbers,
+                letters, dashes and dots), then add the following to your environment
+                configuration:</h2>\n  <pre>\n    config.hosts &lt;&lt; \"www.example.com\"\n
+                \ </pre>\n  <p>For more details view: <a href=\"https://guides.rubyonrails.org/configuring.html#actiondispatch-hostauthorization\">the
+                Host Authorization guide</a></p>\n</main>\n\n\n</body>\n</html>\n"
   "/products":
     get:
       summary: index
@@ -198,6 +535,89 @@ paths:
                 type: array
                 items: {}
               example: []
+        '403':
+          description: renders a successful response
+          content:
+            text/html:
+              schema:
+                type: string
+              example: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\"
+                />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n
+                \ <title>Action Controller: Exception caught</title>\n  <style>\n
+                \   body {\n      background-color: #FAFAFA;\n      color: #333;\n
+                \     color-scheme: light dark;\n      supported-color-schemes: light
+                dark;\n      margin: 0px;\n    }\n\n    body, p, ol, ul, td {\n      font-family:
+                helvetica, verdana, arial, sans-serif;\n      font-size:   13px;\n
+                \     line-height: 18px;\n    }\n\n    pre {\n      font-size: 11px;\n
+                \     white-space: pre-wrap;\n    }\n\n    pre.box {\n      border:
+                1px solid #EEE;\n      padding: 10px;\n      margin: 0px;\n      width:
+                958px;\n    }\n\n    header {\n      color: #F0F0F0;\n      background:
+                #C00;\n      padding: 0.5em 1.5em;\n    }\n\n    h1 {\n      overflow-wrap:
+                break-word;\n      margin: 0.2em 0;\n      line-height: 1.1em;\n      font-size:
+                2em;\n    }\n\n    h2 {\n      color: #C00;\n      line-height: 25px;\n
+                \   }\n\n    code.traces {\n      font-size: 11px;\n    }\n\n    .response-heading,
+                .request-heading {\n      margin-top: 30px;\n    }\n\n    .exception-message
+                {\n      padding: 8px 0;\n    }\n\n    .exception-message .message
+                {\n      margin-bottom: 8px;\n      line-height: 25px;\n      font-size:
+                1.5em;\n      font-weight: bold;\n      color: #C00;\n    }\n\n    .details
+                {\n      border: 1px solid #D0D0D0;\n      border-radius: 4px;\n      margin:
+                1em 0px;\n      display: block;\n      max-width: 978px;\n    }\n\n
+                \   .summary {\n      padding: 8px 15px;\n      border-bottom: 1px
+                solid #D0D0D0;\n      display: block;\n    }\n\n    a.summary {\n
+                \     color: #F0F0F0;\n      text-decoration: none;\n      background:
+                #C52F24;\n      border-bottom: none;\n    }\n\n    .details pre {\n
+                \     margin: 5px;\n      border: none;\n    }\n\n    #container {\n
+                \     box-sizing: border-box;\n      width: 100%;\n      padding:
+                0 1.5em;\n    }\n\n    .source * {\n      margin: 0px;\n      padding:
+                0px;\n    }\n\n    .source {\n      border: 1px solid #D9D9D9;\n      background:
+                #ECECEC;\n      max-width: 978px;\n    }\n\n    .source pre {\n      padding:
+                10px 0px;\n      border: none;\n    }\n\n    .source .data {\n      font-size:
+                80%;\n      overflow: auto;\n      background-color: #FFF;\n    }\n\n
+                \   .info {\n      padding: 0.5em;\n    }\n\n    .source .data .line_numbers
+                {\n      background-color: #ECECEC;\n      color: #555;\n      padding:
+                1em .5em;\n      border-right: 1px solid #DDD;\n      text-align:
+                right;\n    }\n\n    .line {\n      padding-left: 10px;\n      white-space:
+                pre;\n    }\n\n    .line:hover {\n      background-color: #F6F6F6;\n
+                \   }\n\n    .line.active {\n      background-color: #FCC;\n    }\n\n
+                \   .button_to {\n      display: inline-block;\n      margin-top:
+                0.75em;\n      margin-bottom: 0.75em;\n    }\n\n    .hidden {\n      display:
+                none;\n    }\n\n    .correction {\n      list-style-type: none;\n
+                \   }\n\n    input[type=\"submit\"] {\n      color: white;\n      background-color:
+                #C00;\n      border: none;\n      border-radius: 12px;\n      box-shadow:
+                0 3px #F99;\n      font-size: 13px;\n      font-weight: bold;\n      margin:
+                0;\n      padding: 10px 18px;\n      cursor: pointer;\n      -webkit-appearance:
+                none;\n    }\n    input[type=\"submit\"]:focus,\n    input[type=\"submit\"]:hover
+                {\n      opacity: 0.8;\n    }\n    input[type=\"submit\"]:active {\n
+                \     box-shadow: 0 2px #F99;\n      transform: translateY(1px)\n
+                \   }\n\n    a { color: #980905; }\n    a:visited { color: #666; }\n
+                \   a.trace-frames {\n      color: #666;\n      overflow-wrap: break-word;\n
+                \   }\n    a:hover, a.trace-frames.selected { color: #C00; }\n    a.summary:hover
+                { color: #FFF; }\n\n    @media (prefers-color-scheme: dark) {\n      body
+                {\n        background-color: #222;\n        color: #ECECEC;\n      }\n\n
+                \     .details, .summary {\n        border-color: #666;\n      }\n\n
+                \     .source {\n        border-color: #555;\n        background-color:
+                #333;\n      }\n\n      .source .data {\n        background: #444;\n
+                \     }\n\n      .source .data .line_numbers {\n        background:
+                #333;\n        border-color: #222;\n      }\n\n      .line:hover {\n
+                \       background: #666;\n      }\n\n      .line.active {\n        background-color:
+                #900;\n      }\n\n      input[type=\"submit\"] {\n        box-shadow:
+                0 3px #800;\n      }\n      input[type=\"submit\"]:active {\n        box-shadow:
+                0 2px #800;\n      }\n\n      a { color: #C00; }\n      a.trace-frames
+                { color: #999; }\n      a:hover, a.trace-frames.selected { color:
+                #E9382B; }\n    }\n\n    \n  </style>\n\n  <script>\n    var toggle
+                = function(id) {\n      document.getElementById(id).classList.toggle('hidden');\n
+                \     return false;\n    }\n    var show = function(id) {\n      document.getElementById(id).style.display
+                = 'block';\n    }\n    var hide = function(id) {\n      document.getElementById(id).style.display
+                = 'none';\n    }\n    var toggleSessionDump = function() {\n      return
+                toggle('session_dump');\n    }\n    var toggleEnvDump = function()
+                {\n      return toggle('env_dump');\n    }\n  </script>\n</head>\n<body>\n\n
+                \ <header>\n  <h1>Blocked hosts: www.example.com</h1>\n</header>\n<main
+                role=\"main\" id=\"container\">\n  <h2>To allow requests to these
+                hosts, make sure they are valid hostnames (containing only numbers,
+                letters, dashes and dots), then add the following to your environment
+                configuration:</h2>\n  <pre>\n    config.hosts &lt;&lt; \"www.example.com\"\n
+                \ </pre>\n  <p>For more details view: <a href=\"https://guides.rubyonrails.org/configuring.html#actiondispatch-hostauthorization\">the
+                Host Authorization guide</a></p>\n</main>\n\n\n</body>\n</html>\n"
   "/products/{id}":
     get:
       summary: show
@@ -209,7 +629,7 @@ paths:
         required: true
         schema:
           type: string
-        example: d39e81d930af3538ec8899cb0fad
+        example: 406daea8cddcb3310a071ebd27e461ffcb813005
       responses:
         '200':
           description: renders a successful response
@@ -292,16 +712,16 @@ paths:
                 - labels
                 - stores
               example:
-                id: 61
-                code: d39e81d930af3538ec8899cb0fad
+                id: 81
+                code: 406daea8cddcb3310a071ebd27e461ffcb813005
                 status: published
                 imported_t: '2023-09-30T03:19:11.000-03:00'
                 url: ''
-                creator: Cotton
+                creator: Leather
                 created_t: 1
                 last_modified_t: 1
-                product_name: Aerodynamic Concrete Knife
-                quantity: '312129'
+                product_name: Rustic Steel Table
+                quantity: '354161'
                 cities: ''
                 purchase_places: ''
                 ingredients_text: ''
@@ -312,10 +732,93 @@ paths:
                 nutriscore_grade: ''
                 main_category: ''
                 image_url: MyString
-                brands: Samsung
+                brands: LG
                 categories: String
                 labels: String
                 stores: String
+        '403':
+          description: renders a successful response
+          content:
+            text/html:
+              schema:
+                type: string
+              example: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\"
+                />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n
+                \ <title>Action Controller: Exception caught</title>\n  <style>\n
+                \   body {\n      background-color: #FAFAFA;\n      color: #333;\n
+                \     color-scheme: light dark;\n      supported-color-schemes: light
+                dark;\n      margin: 0px;\n    }\n\n    body, p, ol, ul, td {\n      font-family:
+                helvetica, verdana, arial, sans-serif;\n      font-size:   13px;\n
+                \     line-height: 18px;\n    }\n\n    pre {\n      font-size: 11px;\n
+                \     white-space: pre-wrap;\n    }\n\n    pre.box {\n      border:
+                1px solid #EEE;\n      padding: 10px;\n      margin: 0px;\n      width:
+                958px;\n    }\n\n    header {\n      color: #F0F0F0;\n      background:
+                #C00;\n      padding: 0.5em 1.5em;\n    }\n\n    h1 {\n      overflow-wrap:
+                break-word;\n      margin: 0.2em 0;\n      line-height: 1.1em;\n      font-size:
+                2em;\n    }\n\n    h2 {\n      color: #C00;\n      line-height: 25px;\n
+                \   }\n\n    code.traces {\n      font-size: 11px;\n    }\n\n    .response-heading,
+                .request-heading {\n      margin-top: 30px;\n    }\n\n    .exception-message
+                {\n      padding: 8px 0;\n    }\n\n    .exception-message .message
+                {\n      margin-bottom: 8px;\n      line-height: 25px;\n      font-size:
+                1.5em;\n      font-weight: bold;\n      color: #C00;\n    }\n\n    .details
+                {\n      border: 1px solid #D0D0D0;\n      border-radius: 4px;\n      margin:
+                1em 0px;\n      display: block;\n      max-width: 978px;\n    }\n\n
+                \   .summary {\n      padding: 8px 15px;\n      border-bottom: 1px
+                solid #D0D0D0;\n      display: block;\n    }\n\n    a.summary {\n
+                \     color: #F0F0F0;\n      text-decoration: none;\n      background:
+                #C52F24;\n      border-bottom: none;\n    }\n\n    .details pre {\n
+                \     margin: 5px;\n      border: none;\n    }\n\n    #container {\n
+                \     box-sizing: border-box;\n      width: 100%;\n      padding:
+                0 1.5em;\n    }\n\n    .source * {\n      margin: 0px;\n      padding:
+                0px;\n    }\n\n    .source {\n      border: 1px solid #D9D9D9;\n      background:
+                #ECECEC;\n      max-width: 978px;\n    }\n\n    .source pre {\n      padding:
+                10px 0px;\n      border: none;\n    }\n\n    .source .data {\n      font-size:
+                80%;\n      overflow: auto;\n      background-color: #FFF;\n    }\n\n
+                \   .info {\n      padding: 0.5em;\n    }\n\n    .source .data .line_numbers
+                {\n      background-color: #ECECEC;\n      color: #555;\n      padding:
+                1em .5em;\n      border-right: 1px solid #DDD;\n      text-align:
+                right;\n    }\n\n    .line {\n      padding-left: 10px;\n      white-space:
+                pre;\n    }\n\n    .line:hover {\n      background-color: #F6F6F6;\n
+                \   }\n\n    .line.active {\n      background-color: #FCC;\n    }\n\n
+                \   .button_to {\n      display: inline-block;\n      margin-top:
+                0.75em;\n      margin-bottom: 0.75em;\n    }\n\n    .hidden {\n      display:
+                none;\n    }\n\n    .correction {\n      list-style-type: none;\n
+                \   }\n\n    input[type=\"submit\"] {\n      color: white;\n      background-color:
+                #C00;\n      border: none;\n      border-radius: 12px;\n      box-shadow:
+                0 3px #F99;\n      font-size: 13px;\n      font-weight: bold;\n      margin:
+                0;\n      padding: 10px 18px;\n      cursor: pointer;\n      -webkit-appearance:
+                none;\n    }\n    input[type=\"submit\"]:focus,\n    input[type=\"submit\"]:hover
+                {\n      opacity: 0.8;\n    }\n    input[type=\"submit\"]:active {\n
+                \     box-shadow: 0 2px #F99;\n      transform: translateY(1px)\n
+                \   }\n\n    a { color: #980905; }\n    a:visited { color: #666; }\n
+                \   a.trace-frames {\n      color: #666;\n      overflow-wrap: break-word;\n
+                \   }\n    a:hover, a.trace-frames.selected { color: #C00; }\n    a.summary:hover
+                { color: #FFF; }\n\n    @media (prefers-color-scheme: dark) {\n      body
+                {\n        background-color: #222;\n        color: #ECECEC;\n      }\n\n
+                \     .details, .summary {\n        border-color: #666;\n      }\n\n
+                \     .source {\n        border-color: #555;\n        background-color:
+                #333;\n      }\n\n      .source .data {\n        background: #444;\n
+                \     }\n\n      .source .data .line_numbers {\n        background:
+                #333;\n        border-color: #222;\n      }\n\n      .line:hover {\n
+                \       background: #666;\n      }\n\n      .line.active {\n        background-color:
+                #900;\n      }\n\n      input[type=\"submit\"] {\n        box-shadow:
+                0 3px #800;\n      }\n      input[type=\"submit\"]:active {\n        box-shadow:
+                0 2px #800;\n      }\n\n      a { color: #C00; }\n      a.trace-frames
+                { color: #999; }\n      a:hover, a.trace-frames.selected { color:
+                #E9382B; }\n    }\n\n    \n  </style>\n\n  <script>\n    var toggle
+                = function(id) {\n      document.getElementById(id).classList.toggle('hidden');\n
+                \     return false;\n    }\n    var show = function(id) {\n      document.getElementById(id).style.display
+                = 'block';\n    }\n    var hide = function(id) {\n      document.getElementById(id).style.display
+                = 'none';\n    }\n    var toggleSessionDump = function() {\n      return
+                toggle('session_dump');\n    }\n    var toggleEnvDump = function()
+                {\n      return toggle('env_dump');\n    }\n  </script>\n</head>\n<body>\n\n
+                \ <header>\n  <h1>Blocked hosts: www.example.com</h1>\n</header>\n<main
+                role=\"main\" id=\"container\">\n  <h2>To allow requests to these
+                hosts, make sure they are valid hostnames (containing only numbers,
+                letters, dashes and dots), then add the following to your environment
+                configuration:</h2>\n  <pre>\n    config.hosts &lt;&lt; \"www.example.com\"\n
+                \ </pre>\n  <p>For more details view: <a href=\"https://guides.rubyonrails.org/configuring.html#actiondispatch-hostauthorization\">the
+                Host Authorization guide</a></p>\n</main>\n\n\n</body>\n</html>\n"
     patch:
       summary: update
       tags:
@@ -326,7 +829,7 @@ paths:
         required: true
         schema:
           type: string
-        example: ec12ac14a46965a4bf
+        example: 7492d2
       requestBody:
         content:
           application/json:
@@ -427,16 +930,16 @@ paths:
                 - labels
                 - stores
               example:
-                id: 62
-                code: 966b11832444a3402a2fde5664b
-                status: published
+                id: 82
+                code: fb7491c23562a61c0d7c
+                status: trash
                 imported_t: '2023-09-30T03:19:11.000-03:00'
                 url: ''
-                creator: Marble
+                creator: Copper
                 created_t: 1
                 last_modified_t: 1
                 product_name: banana
-                quantity: '856448'
+                quantity: '779878'
                 cities: ''
                 purchase_places: ''
                 ingredients_text: ''
@@ -447,7 +950,7 @@ paths:
                 nutriscore_grade: ''
                 main_category: ''
                 image_url: MyString
-                brands: Beats
+                brands: Sony
                 categories: String
                 labels: String
                 stores: String
@@ -464,6 +967,89 @@ paths:
                 - error
               example:
                 error: 'param is missing or the value is empty: product'
+        '403':
+          description: renders a JSON response with errors for the product
+          content:
+            text/html:
+              schema:
+                type: string
+              example: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\"
+                />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n
+                \ <title>Action Controller: Exception caught</title>\n  <style>\n
+                \   body {\n      background-color: #FAFAFA;\n      color: #333;\n
+                \     color-scheme: light dark;\n      supported-color-schemes: light
+                dark;\n      margin: 0px;\n    }\n\n    body, p, ol, ul, td {\n      font-family:
+                helvetica, verdana, arial, sans-serif;\n      font-size:   13px;\n
+                \     line-height: 18px;\n    }\n\n    pre {\n      font-size: 11px;\n
+                \     white-space: pre-wrap;\n    }\n\n    pre.box {\n      border:
+                1px solid #EEE;\n      padding: 10px;\n      margin: 0px;\n      width:
+                958px;\n    }\n\n    header {\n      color: #F0F0F0;\n      background:
+                #C00;\n      padding: 0.5em 1.5em;\n    }\n\n    h1 {\n      overflow-wrap:
+                break-word;\n      margin: 0.2em 0;\n      line-height: 1.1em;\n      font-size:
+                2em;\n    }\n\n    h2 {\n      color: #C00;\n      line-height: 25px;\n
+                \   }\n\n    code.traces {\n      font-size: 11px;\n    }\n\n    .response-heading,
+                .request-heading {\n      margin-top: 30px;\n    }\n\n    .exception-message
+                {\n      padding: 8px 0;\n    }\n\n    .exception-message .message
+                {\n      margin-bottom: 8px;\n      line-height: 25px;\n      font-size:
+                1.5em;\n      font-weight: bold;\n      color: #C00;\n    }\n\n    .details
+                {\n      border: 1px solid #D0D0D0;\n      border-radius: 4px;\n      margin:
+                1em 0px;\n      display: block;\n      max-width: 978px;\n    }\n\n
+                \   .summary {\n      padding: 8px 15px;\n      border-bottom: 1px
+                solid #D0D0D0;\n      display: block;\n    }\n\n    a.summary {\n
+                \     color: #F0F0F0;\n      text-decoration: none;\n      background:
+                #C52F24;\n      border-bottom: none;\n    }\n\n    .details pre {\n
+                \     margin: 5px;\n      border: none;\n    }\n\n    #container {\n
+                \     box-sizing: border-box;\n      width: 100%;\n      padding:
+                0 1.5em;\n    }\n\n    .source * {\n      margin: 0px;\n      padding:
+                0px;\n    }\n\n    .source {\n      border: 1px solid #D9D9D9;\n      background:
+                #ECECEC;\n      max-width: 978px;\n    }\n\n    .source pre {\n      padding:
+                10px 0px;\n      border: none;\n    }\n\n    .source .data {\n      font-size:
+                80%;\n      overflow: auto;\n      background-color: #FFF;\n    }\n\n
+                \   .info {\n      padding: 0.5em;\n    }\n\n    .source .data .line_numbers
+                {\n      background-color: #ECECEC;\n      color: #555;\n      padding:
+                1em .5em;\n      border-right: 1px solid #DDD;\n      text-align:
+                right;\n    }\n\n    .line {\n      padding-left: 10px;\n      white-space:
+                pre;\n    }\n\n    .line:hover {\n      background-color: #F6F6F6;\n
+                \   }\n\n    .line.active {\n      background-color: #FCC;\n    }\n\n
+                \   .button_to {\n      display: inline-block;\n      margin-top:
+                0.75em;\n      margin-bottom: 0.75em;\n    }\n\n    .hidden {\n      display:
+                none;\n    }\n\n    .correction {\n      list-style-type: none;\n
+                \   }\n\n    input[type=\"submit\"] {\n      color: white;\n      background-color:
+                #C00;\n      border: none;\n      border-radius: 12px;\n      box-shadow:
+                0 3px #F99;\n      font-size: 13px;\n      font-weight: bold;\n      margin:
+                0;\n      padding: 10px 18px;\n      cursor: pointer;\n      -webkit-appearance:
+                none;\n    }\n    input[type=\"submit\"]:focus,\n    input[type=\"submit\"]:hover
+                {\n      opacity: 0.8;\n    }\n    input[type=\"submit\"]:active {\n
+                \     box-shadow: 0 2px #F99;\n      transform: translateY(1px)\n
+                \   }\n\n    a { color: #980905; }\n    a:visited { color: #666; }\n
+                \   a.trace-frames {\n      color: #666;\n      overflow-wrap: break-word;\n
+                \   }\n    a:hover, a.trace-frames.selected { color: #C00; }\n    a.summary:hover
+                { color: #FFF; }\n\n    @media (prefers-color-scheme: dark) {\n      body
+                {\n        background-color: #222;\n        color: #ECECEC;\n      }\n\n
+                \     .details, .summary {\n        border-color: #666;\n      }\n\n
+                \     .source {\n        border-color: #555;\n        background-color:
+                #333;\n      }\n\n      .source .data {\n        background: #444;\n
+                \     }\n\n      .source .data .line_numbers {\n        background:
+                #333;\n        border-color: #222;\n      }\n\n      .line:hover {\n
+                \       background: #666;\n      }\n\n      .line.active {\n        background-color:
+                #900;\n      }\n\n      input[type=\"submit\"] {\n        box-shadow:
+                0 3px #800;\n      }\n      input[type=\"submit\"]:active {\n        box-shadow:
+                0 2px #800;\n      }\n\n      a { color: #C00; }\n      a.trace-frames
+                { color: #999; }\n      a:hover, a.trace-frames.selected { color:
+                #E9382B; }\n    }\n\n    \n  </style>\n\n  <script>\n    var toggle
+                = function(id) {\n      document.getElementById(id).classList.toggle('hidden');\n
+                \     return false;\n    }\n    var show = function(id) {\n      document.getElementById(id).style.display
+                = 'block';\n    }\n    var hide = function(id) {\n      document.getElementById(id).style.display
+                = 'none';\n    }\n    var toggleSessionDump = function() {\n      return
+                toggle('session_dump');\n    }\n    var toggleEnvDump = function()
+                {\n      return toggle('env_dump');\n    }\n  </script>\n</head>\n<body>\n\n
+                \ <header>\n  <h1>Blocked hosts: www.example.com</h1>\n</header>\n<main
+                role=\"main\" id=\"container\">\n  <h2>To allow requests to these
+                hosts, make sure they are valid hostnames (containing only numbers,
+                letters, dashes and dots), then add the following to your environment
+                configuration:</h2>\n  <pre>\n    config.hosts &lt;&lt; \"www.example.com\"\n
+                \ </pre>\n  <p>For more details view: <a href=\"https://guides.rubyonrails.org/configuring.html#actiondispatch-hostauthorization\">the
+                Host Authorization guide</a></p>\n</main>\n\n\n</body>\n</html>\n"
     delete:
       summary: destroy
       tags:
@@ -474,7 +1060,90 @@ paths:
         required: true
         schema:
           type: string
-        example: a5052fcf2
+        example: 86f39b2b9461fcd3
       responses:
         '200':
           description: destroy the requested product
+        '403':
+          description: destroy the requested product
+          content:
+            text/html:
+              schema:
+                type: string
+              example: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\"
+                />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n
+                \ <title>Action Controller: Exception caught</title>\n  <style>\n
+                \   body {\n      background-color: #FAFAFA;\n      color: #333;\n
+                \     color-scheme: light dark;\n      supported-color-schemes: light
+                dark;\n      margin: 0px;\n    }\n\n    body, p, ol, ul, td {\n      font-family:
+                helvetica, verdana, arial, sans-serif;\n      font-size:   13px;\n
+                \     line-height: 18px;\n    }\n\n    pre {\n      font-size: 11px;\n
+                \     white-space: pre-wrap;\n    }\n\n    pre.box {\n      border:
+                1px solid #EEE;\n      padding: 10px;\n      margin: 0px;\n      width:
+                958px;\n    }\n\n    header {\n      color: #F0F0F0;\n      background:
+                #C00;\n      padding: 0.5em 1.5em;\n    }\n\n    h1 {\n      overflow-wrap:
+                break-word;\n      margin: 0.2em 0;\n      line-height: 1.1em;\n      font-size:
+                2em;\n    }\n\n    h2 {\n      color: #C00;\n      line-height: 25px;\n
+                \   }\n\n    code.traces {\n      font-size: 11px;\n    }\n\n    .response-heading,
+                .request-heading {\n      margin-top: 30px;\n    }\n\n    .exception-message
+                {\n      padding: 8px 0;\n    }\n\n    .exception-message .message
+                {\n      margin-bottom: 8px;\n      line-height: 25px;\n      font-size:
+                1.5em;\n      font-weight: bold;\n      color: #C00;\n    }\n\n    .details
+                {\n      border: 1px solid #D0D0D0;\n      border-radius: 4px;\n      margin:
+                1em 0px;\n      display: block;\n      max-width: 978px;\n    }\n\n
+                \   .summary {\n      padding: 8px 15px;\n      border-bottom: 1px
+                solid #D0D0D0;\n      display: block;\n    }\n\n    a.summary {\n
+                \     color: #F0F0F0;\n      text-decoration: none;\n      background:
+                #C52F24;\n      border-bottom: none;\n    }\n\n    .details pre {\n
+                \     margin: 5px;\n      border: none;\n    }\n\n    #container {\n
+                \     box-sizing: border-box;\n      width: 100%;\n      padding:
+                0 1.5em;\n    }\n\n    .source * {\n      margin: 0px;\n      padding:
+                0px;\n    }\n\n    .source {\n      border: 1px solid #D9D9D9;\n      background:
+                #ECECEC;\n      max-width: 978px;\n    }\n\n    .source pre {\n      padding:
+                10px 0px;\n      border: none;\n    }\n\n    .source .data {\n      font-size:
+                80%;\n      overflow: auto;\n      background-color: #FFF;\n    }\n\n
+                \   .info {\n      padding: 0.5em;\n    }\n\n    .source .data .line_numbers
+                {\n      background-color: #ECECEC;\n      color: #555;\n      padding:
+                1em .5em;\n      border-right: 1px solid #DDD;\n      text-align:
+                right;\n    }\n\n    .line {\n      padding-left: 10px;\n      white-space:
+                pre;\n    }\n\n    .line:hover {\n      background-color: #F6F6F6;\n
+                \   }\n\n    .line.active {\n      background-color: #FCC;\n    }\n\n
+                \   .button_to {\n      display: inline-block;\n      margin-top:
+                0.75em;\n      margin-bottom: 0.75em;\n    }\n\n    .hidden {\n      display:
+                none;\n    }\n\n    .correction {\n      list-style-type: none;\n
+                \   }\n\n    input[type=\"submit\"] {\n      color: white;\n      background-color:
+                #C00;\n      border: none;\n      border-radius: 12px;\n      box-shadow:
+                0 3px #F99;\n      font-size: 13px;\n      font-weight: bold;\n      margin:
+                0;\n      padding: 10px 18px;\n      cursor: pointer;\n      -webkit-appearance:
+                none;\n    }\n    input[type=\"submit\"]:focus,\n    input[type=\"submit\"]:hover
+                {\n      opacity: 0.8;\n    }\n    input[type=\"submit\"]:active {\n
+                \     box-shadow: 0 2px #F99;\n      transform: translateY(1px)\n
+                \   }\n\n    a { color: #980905; }\n    a:visited { color: #666; }\n
+                \   a.trace-frames {\n      color: #666;\n      overflow-wrap: break-word;\n
+                \   }\n    a:hover, a.trace-frames.selected { color: #C00; }\n    a.summary:hover
+                { color: #FFF; }\n\n    @media (prefers-color-scheme: dark) {\n      body
+                {\n        background-color: #222;\n        color: #ECECEC;\n      }\n\n
+                \     .details, .summary {\n        border-color: #666;\n      }\n\n
+                \     .source {\n        border-color: #555;\n        background-color:
+                #333;\n      }\n\n      .source .data {\n        background: #444;\n
+                \     }\n\n      .source .data .line_numbers {\n        background:
+                #333;\n        border-color: #222;\n      }\n\n      .line:hover {\n
+                \       background: #666;\n      }\n\n      .line.active {\n        background-color:
+                #900;\n      }\n\n      input[type=\"submit\"] {\n        box-shadow:
+                0 3px #800;\n      }\n      input[type=\"submit\"]:active {\n        box-shadow:
+                0 2px #800;\n      }\n\n      a { color: #C00; }\n      a.trace-frames
+                { color: #999; }\n      a:hover, a.trace-frames.selected { color:
+                #E9382B; }\n    }\n\n    \n  </style>\n\n  <script>\n    var toggle
+                = function(id) {\n      document.getElementById(id).classList.toggle('hidden');\n
+                \     return false;\n    }\n    var show = function(id) {\n      document.getElementById(id).style.display
+                = 'block';\n    }\n    var hide = function(id) {\n      document.getElementById(id).style.display
+                = 'none';\n    }\n    var toggleSessionDump = function() {\n      return
+                toggle('session_dump');\n    }\n    var toggleEnvDump = function()
+                {\n      return toggle('env_dump');\n    }\n  </script>\n</head>\n<body>\n\n
+                \ <header>\n  <h1>Blocked hosts: www.example.com</h1>\n</header>\n<main
+                role=\"main\" id=\"container\">\n  <h2>To allow requests to these
+                hosts, make sure they are valid hostnames (containing only numbers,
+                letters, dashes and dots), then add the following to your environment
+                configuration:</h2>\n  <pre>\n    config.hosts &lt;&lt; \"www.example.com\"\n
+                \ </pre>\n  <p>For more details view: <a href=\"https://guides.rubyonrails.org/configuring.html#actiondispatch-hostauthorization\">the
+                Host Authorization guide</a></p>\n</main>\n\n\n</body>\n</html>\n"

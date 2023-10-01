@@ -61,3 +61,9 @@ end
 FactoryBot::SyntaxRunner.class_eval do
   include ActionDispatch::TestProcess
 end
+
+RSpec::OpenAPI.info = {
+  description: 'API de informação nutricional dos alimentos que os usuários publicam pela aplicação móvel, dados do projeto Open Food Facts',
+  title: 'API-Alimentos-Fitness-Foods',
+  version: '1.0'
+}

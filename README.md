@@ -3,8 +3,12 @@
 
 >  This is a challenge by [Coodesh](https://coodesh.com/)
 
-### Linguagens
+### Tecnologias
  - Ruby
+ - Rails
+ - Docker
+ - Redis
+ - PostgreSQL
 ### Introdução
  API de informação nutricional dos alimentos que os usuários publicam pela aplicação móvel, dados do projeto Open Food Facts
 

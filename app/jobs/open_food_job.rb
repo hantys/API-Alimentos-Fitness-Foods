@@ -14,7 +14,7 @@ class OpenFoodJob < ApplicationJob
 
         puts "****#{file_url}****"
         # Baixe o arquivo gz e descompacte-o
-        OpenGzFileJob.perform_now(file_url)
+        OpenGzFileJob.perform_later(file_url)
       end
     end
   end

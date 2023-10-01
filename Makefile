@@ -27,6 +27,9 @@ seed:
 console:
 	docker-compose exec app rails console
 
+openapi:
+	docker-compose exec -e OPENAPI=1 -e RAILS_ENV=test app rspec spec/requests
+
 rspec:
 	docker-compose exec -e RAILS_ENV=test app rspec $(ARG)
 
