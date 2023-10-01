@@ -21,6 +21,29 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
+# Use Redis adapter to run Action Cable in production
+gem 'redis', '4.5.1'
+
+gem 'zlib'
+
+gem 'open-uri'
+
+# https://github.com/jwt/ruby-jwt
+gem 'jwt'
+
+# https://github.com/mperham/sidekiq
+gem 'sidekiq', '~> 6.2.1'
+
+# https://github.com/moove-it/sidekiq-scheduler
+gem 'sidekiq-scheduler', '~> 3.1.0'
+
+# https://github.com/ondrejbartas/sidekiq-cron
+gem 'sidekiq-cron', '~> 1.8.0'
+
+# https://github.com/kaminari/kaminari
+gem 'kaminari'
+
+gem 'systemu'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -36,9 +59,6 @@ group :development, :test do
 
   # https://github.com/ffaker/ffaker
   gem 'ffaker'
-
-  # https://github.com/jwt/ruby-jwt
-  gem 'jwt'
 
   gem 'pry-rails'
 
@@ -81,4 +101,7 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  # https://github.com/flyerhzm/bullet
+  gem 'bullet'
 end

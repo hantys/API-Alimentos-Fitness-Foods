@@ -1,8 +1,8 @@
 class CreateProducts < ActiveRecord::Migration[7.0]
   def change
     create_table :products do |t|
-      t.integer :code
-      t.integer :status
+      t.string :code
+      t.integer :status, default: 0
       t.datetime :imported_t
       t.string :url
       t.string :creator
@@ -19,11 +19,15 @@ class CreateProducts < ActiveRecord::Migration[7.0]
       t.string :nutriscore_score
       t.string :nutriscore_grade
       t.string :main_category
-      t.references :brand, foreign_key: true
-      t.references :store, foreign_key: true
+      t.string :brands
+      t.string :categories
+      t.string :labels
+      t.string :stores
       t.string :image_url
 
       t.timestamps
     end
+
+    add_index :products, :code
   end
 end

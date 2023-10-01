@@ -10,31 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_30_031911) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_30_192130) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "brands", force: :cascade do |t|
+  create_table "platforms", force: :cascade do |t|
     t.string "name"
+    t.string "key"
+    t.string "secret"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "labels", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["secret"], name: "index_platforms_on_secret"
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer "code"
-    t.integer "status"
+    t.string "code"
+    t.integer "status", default: 0
     t.datetime "imported_t"
     t.string "url"
     t.string "creator"
@@ -51,21 +42,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_30_031911) do
     t.string "nutriscore_score"
     t.string "nutriscore_grade"
     t.string "main_category"
-    t.bigint "brand_id"
-    t.bigint "store_id"
+    t.string "brands"
+    t.string "categories"
+    t.string "labels"
+    t.string "stores"
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["brand_id"], name: "index_products_on_brand_id"
-    t.index ["store_id"], name: "index_products_on_store_id"
+    t.index ["code"], name: "index_products_on_code"
   end
 
-  create_table "stores", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_foreign_key "products", "brands"
-  add_foreign_key "products", "stores"
 end

@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
-  belongs_to :brand, optional: true
-  belongs_to :store, optional: true
+  enum status: { draft: 0, published: 1, trash: 2 }
 
   validates_presence_of :product_name
+  validates :code, presence: true, uniqueness: true
 end

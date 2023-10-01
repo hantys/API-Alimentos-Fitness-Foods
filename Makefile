@@ -28,7 +28,7 @@ console:
 	docker-compose exec app rails console
 
 rspec:
-	docker-compose exec app rspec $(ARG)
+	docker-compose exec -e RAILS_ENV=test app rspec $(ARG)
 
 reset:
 	docker-compose exec app bundle exec rake db:drop db:setup db:create db:migrate db:seed
