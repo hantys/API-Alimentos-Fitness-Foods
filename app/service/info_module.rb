@@ -14,7 +14,7 @@ module InfoModule
   def last_cron_jobs
     REDIS.get('last_job_time')
     data = Time.parse(REDIS.get('last_job_time'))
-    data.strftime("%d/%m/%Y %H:%M")
+    data.strftime("%d/%m/%Y %H:%M:%S")
   rescue StandardError
     "Não iniciado"
   end
